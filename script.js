@@ -1,8 +1,15 @@
 function minDate(dates) {
-  //write you code here
+  let min = new Date(dates[0]); // Initialize min with the first date
+  for (let i = 1; i < dates.length; i++) { // Loop through the rest of the dates
+    let current = new Date(dates[i]); // Convert the current date string to a Date object
+    if (current < min) { // If the current date is earlier than min
+      min = current; // Update min
+    }
+  }
+  return min.toISOString().slice(0, 10); // Return min as a string in the format "YYYY/MM/DD"
 }
 
-// Do not change the code
+// Do not change the co
 
 var dates = [
   "2023/03/01",
